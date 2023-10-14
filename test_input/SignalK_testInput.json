@@ -1,0 +1,835 @@
+{
+    "vessels": {
+        "urn:mrn:signalk:uuid:521ae5ac-f557-4c7f-a225-e0e3de666ecb": {
+            "uuid": "urn:mrn:signalk:uuid:521ae5ac-f557-4c7f-a225-e0e3de666ecb",
+            "navigation": {
+                "rateOfTurn": {
+                    "meta": {
+                        "units": "rad/s",
+                        "description": "Rate of turn (+ve is change to starboard). If the value is AIS RIGHT or LEFT, set to +-0.0206 rads and add warning in notifications"
+                    },
+                    "value": -0.00005556,
+                    "$source": "can0.0",
+                    "timestamp": "2023-06-19T19:50:15.025Z",
+                    "pgn": 127251,
+                    "values": {
+                        "can0.1": {
+                            "value": 0.00006619,
+                            "pgn": 127251,
+                            "timestamp": "2023-06-19T19:50:14.992Z"
+                        },
+                        "can0.0": {
+                            "value": -0.00005556,
+                            "timestamp": "2023-06-19T19:50:15.025Z",
+                            "pgn": 127251
+                        }
+                    }
+                },
+                "headingMagnetic": {
+                    "meta": {
+                        "units": "rad",
+                        "description": "Current magnetic heading of the vessel, equals 'headingCompass adjusted for magneticDeviation'"
+                    },
+                    "value": 4.3835,
+                    "$source": "can0.0",
+                    "timestamp": "2023-06-19T19:50:15.025Z",
+                    "pgn": 127250,
+                    "values": {
+                        "can0.1": {
+                            "value": 3.245,
+                            "pgn": 127250,
+                            "timestamp": "2023-06-19T19:50:14.992Z"
+                        },
+                        "can0.0": {
+                            "value": 4.3835,
+                            "timestamp": "2023-06-19T19:50:15.025Z",
+                            "pgn": 127250
+                        }
+                    }
+                },
+                "attitude": {
+                    "meta": {
+                        "description": "Vessel attitude: roll, pitch and yaw",
+                        "properties": {
+                            "roll": {
+                                "type": "number",
+                                "description": "Vessel roll, +ve is list to starboard",
+                                "units": "rad"
+                            },
+                            "pitch": {
+                                "type": "number",
+                                "description": "Pitch, +ve is bow up",
+                                "units": "rad"
+                            },
+                            "yaw": {
+                                "type": "number",
+                                "description": "Yaw, +ve is heading change to starboard",
+                                "units": "rad"
+                            }
+                        }
+                    },
+                    "value": {
+                        "yaw": null,
+                        "pitch": 0.001,
+                        "roll": -0.0125
+                    },
+                    "$source": "can0.1",
+                    "timestamp": "2023-06-19T19:50:14.943Z",
+                    "pgn": 127257,
+                    "values": {
+                        "can0.1": {
+                            "value": {
+                                "yaw": null,
+                                "pitch": 0.001,
+                                "roll": -0.0125
+                            },
+                            "pgn": 127257,
+                            "timestamp": "2023-06-19T19:50:14.943Z"
+                        },
+                        "can0.0": {
+                            "value": {
+                                "yaw": null,
+                                "pitch": -0.2988,
+                                "roll": -0.2047
+                            },
+                            "timestamp": "2023-06-19T19:50:14.147Z",
+                            "pgn": 127257
+                        }
+                    }
+                },
+                "speedThroughWater": {
+                    "meta": {
+                        "units": "m/s",
+                        "description": "Vessel speed through the water"
+                    },
+                    "value": 0,
+                    "$source": "can0.35",
+                    "timestamp": "2023-06-19T19:50:15.030Z",
+                    "pgn": 128259
+                },
+                "speedThroughWaterReferenceType": {
+                    "meta": {},
+                    "value": "Paddle wheel",
+                    "$source": "can0.35",
+                    "timestamp": "2023-06-19T19:50:15.030Z",
+                    "pgn": 128259
+                },
+                "trip": {
+                    "log": {
+                        "meta": {
+                            "units": "m",
+                            "description": "Total distance traveled on this trip / since trip reset"
+                        },
+                        "value": 0,
+                        "$source": "can0.35",
+                        "timestamp": "2023-06-19T19:50:14.437Z",
+                        "pgn": 128275
+                    }
+                },
+                "log": {
+                    "meta": {
+                        "units": "m",
+                        "description": "Total distance traveled"
+                    },
+                    "value": 0,
+                    "$source": "can0.35",
+                    "timestamp": "2023-06-19T19:50:14.437Z",
+                    "pgn": 128275
+                },
+                "gnss": {
+                    "satellitesInView": {
+                        "meta": {},
+                        "value": {
+                            "count": 12,
+                            "satellites": [
+                                {
+                                    "id": 25,
+                                    "elevation": 0.3491,
+                                    "azimuth": 4.2586,
+                                    "SNR": 16
+                                },
+                                {
+                                    "id": 70,
+                                    "elevation": 1.4312,
+                                    "azimuth": 0.3491,
+                                    "SNR": 0
+                                },
+                                {
+                                    "id": 84,
+                                    "elevation": 0.6458,
+                                    "azimuth": 1.7628,
+                                    "SNR": 0
+                                },
+                                {
+                                    "id": 69,
+                                    "elevation": 0.2967,
+                                    "azimuth": 0.4887,
+                                    "SNR": 26
+                                },
+                                {
+                                    "id": 85,
+                                    "elevation": 0.925,
+                                    "azimuth": 0.0698,
+                                    "SNR": 29
+                                },
+                                {
+                                    "id": 71,
+                                    "elevation": 0.7505,
+                                    "azimuth": 3.6477,
+                                    "SNR": 28
+                                },
+                                {
+                                    "id": 86,
+                                    "elevation": 0.2967,
+                                    "azimuth": 5.6898,
+                                    "SNR": 15
+                                },
+                                {
+                                    "id": 29,
+                                    "elevation": 0.9076,
+                                    "azimuth": 5.4978,
+                                    "SNR": 35
+                                },
+                                {
+                                    "id": 5,
+                                    "elevation": 1.0821,
+                                    "azimuth": 0,
+                                    "SNR": 35
+                                },
+                                {
+                                    "id": 18,
+                                    "elevation": 0.1047,
+                                    "azimuth": 5.2011,
+                                    "SNR": 22
+                                },
+                                {
+                                    "id": 11,
+                                    "elevation": 0.6807,
+                                    "azimuth": 1.2741,
+                                    "SNR": 0
+                                },
+                                {
+                                    "id": 13,
+                                    "elevation": 0.9076,
+                                    "azimuth": 2.3038,
+                                    "SNR": 17
+                                }
+                            ]
+                        },
+                        "$source": "can0.2",
+                        "timestamp": "2023-06-19T19:50:14.137Z",
+                        "pgn": 129540
+                    },
+                    "satellites": {
+                        "meta": {
+                            "description": "Number of satellites"
+                        },
+                        "value": 15,
+                        "$source": "can0.2",
+                        "timestamp": "2023-06-19T19:50:14.142Z",
+                        "pgn": 129029
+                    },
+                    "horizontalDilution": {
+                        "meta": {
+                            "description": "Horizontal Dilution of Precision"
+                        },
+                        "value": 1,
+                        "$source": "can0.2",
+                        "timestamp": "2023-06-19T19:50:14.142Z",
+                        "pgn": 129029
+                    },
+                    "positionDilution": {
+                        "meta": {
+                            "description": "Positional Dilution of Precision"
+                        },
+                        "value": 1.7,
+                        "$source": "can0.2",
+                        "timestamp": "2023-06-19T19:50:14.142Z",
+                        "pgn": 129029
+                    },
+                    "integrity": {
+                        "meta": {
+                            "description": "Integrity of the satellite fix"
+                        },
+                        "value": "no Integrity checking",
+                        "$source": "can0.2",
+                        "timestamp": "2023-06-19T19:50:14.142Z",
+                        "pgn": 129029
+                    },
+                    "type": {
+                        "meta": {
+                            "description": "Fix type"
+                        },
+                        "value": "Combined GPS/GLONASS",
+                        "$source": "can0.2",
+                        "timestamp": "2023-06-19T19:50:14.142Z",
+                        "pgn": 129029
+                    },
+                    "antennaAltitude": {
+                        "meta": {
+                            "units": "m",
+                            "description": "Altitude of antenna"
+                        },
+                        "value": 15.9,
+                        "$source": "can0.2",
+                        "timestamp": "2023-06-19T19:50:14.142Z",
+                        "pgn": 129029
+                    },
+                    "geoidalSeparation": {
+                        "meta": {
+                            "description": "Difference between WGS84 earth ellipsoid and mean sea level"
+                        },
+                        "value": -31,
+                        "$source": "can0.2",
+                        "timestamp": "2023-06-19T19:50:14.142Z",
+                        "pgn": 129029
+                    },
+                    "methodQuality": {
+                        "meta": {
+                            "description": "Quality of the satellite fix"
+                        },
+                        "value": "GNSS Fix",
+                        "$source": "can0.2",
+                        "timestamp": "2023-06-19T19:50:14.142Z",
+                        "pgn": 129029
+                    }
+                },
+                "magneticVariation": {
+                    "meta": {
+                        "units": "rad",
+                        "description": "The magnetic variation (declination) at the current position that must be added to the magnetic heading to derive the true heading. Easterly variations are positive and Westerly variations are negative (in Radians)."
+                    },
+                    "value": -0.1245,
+                    "$source": "can0.0",
+                    "timestamp": "2023-06-19T19:50:15.025Z",
+                    "pgn": 127250,
+                    "values": {
+                        "can0.37": {
+                            "value": -0.1245,
+                            "pgn": 127258,
+                            "timestamp": "2023-06-19T19:50:07.862Z"
+                        },
+                        "can0.2": {
+                            "value": -0.1245,
+                            "timestamp": "2023-06-19T19:50:14.145Z",
+                            "pgn": 127258
+                        },
+                        "can0.0": {
+                            "value": -0.1245,
+                            "timestamp": "2023-06-19T19:50:15.025Z",
+                            "pgn": 127250
+                        }
+                    }
+                },
+                "speedOverGround": {
+                    "meta": {
+                        "units": "m/s",
+                        "description": "Vessel speed over ground. If converting from AIS 'HIGH' value, set to 102.2 (Ais max value) and add warning in notifications"
+                    },
+                    "value": 0,
+                    "$source": "can0.2",
+                    "timestamp": "2023-06-19T19:50:15.024Z",
+                    "pgn": 129026
+                },
+                "courseOverGroundTrue": {
+                    "meta": {
+                        "units": "rad",
+                        "description": "Course over ground (true)"
+                    },
+                    "value": 6.0174,
+                    "$source": "can0.2",
+                    "timestamp": "2023-06-19T19:42:49.512Z",
+                    "pgn": 129026
+                },
+                "position": {
+                    "meta": {
+                        "description": "The position of the vessel in 2 or 3 dimensions (WGS84 datum)",
+                        "properties": {
+                            "longitude": {
+                                "type": "number",
+                                "description": "Longitude",
+                                "units": "deg",
+                                "example": 4.98765245
+                            },
+                            "latitude": {
+                                "type": "number",
+                                "description": "Latitude",
+                                "units": "deg",
+                                "example": 52.0987654
+                            },
+                            "altitude": {
+                                "type": "number",
+                                "description": "Altitude",
+                                "units": "m"
+                            }
+                        }
+                    },
+                    "value": {
+                        "longitude": -80.7161345,
+                        "latitude": 28.3292321
+                    },
+                    "$source": "can0.2",
+                    "timestamp": "2023-06-19T19:50:15.024Z",
+                    "pgn": 129025
+                },
+                "datetime": {
+                    "meta": {
+                        "description": "Time and Date from the GNSS Positioning System"
+                    },
+                    "value": "2023-06-19T19:50:14.00320Z",
+                    "$source": "can0.2",
+                    "timestamp": "2023-06-19T19:50:14.142Z",
+                    "pgn": 129029
+                },
+                "courseOverGroundMagnetic": {
+                    "meta": {
+                        "units": "rad",
+                        "description": "Course over ground (magnetic)"
+                    },
+                    "value": 4.3835,
+                    "$source": "can0.2",
+                    "timestamp": "2023-06-19T19:50:15.024Z",
+                    "pgn": 129026
+                }
+            },
+            "environment": {
+                "wind": {
+                    "speedApparent": {
+                        "meta": {
+                            "units": "m/s",
+                            "description": "Apparent wind speed"
+                        },
+                        "value": 0,
+                        "$source": "can0.3",
+                        "timestamp": "2023-06-19T19:50:14.984Z",
+                        "pgn": 130306
+                    },
+                    "angleApparent": {
+                        "meta": {
+                            "units": "rad",
+                            "description": "Apparent wind angle, negative to port"
+                        },
+                        "value": 1.107,
+                        "$source": "can0.3",
+                        "timestamp": "2023-06-19T19:50:14.984Z",
+                        "pgn": 130306
+                    }
+                },
+                "water": {
+                    "temperature": {
+                        "meta": {
+                            "units": "K",
+                            "description": "Current water temperature"
+                        },
+                        "value": 300.59,
+                        "$source": "can0.35",
+                        "timestamp": "2023-06-19T19:50:14.934Z",
+                        "pgn": 130311
+                    }
+                }
+            }
+        }
+    },
+    "self": "vessels.urn:mrn:signalk:uuid:521ae5ac-f557-4c7f-a225-e0e3de666ecb",
+    "version": "0.1.0",
+    "sources": {
+        "defaults": {},
+        "can0": {
+            "0": {
+                "n2k": {
+                    "pgns": {
+                        "60928": "2023-06-19T19:49:34.048Z",
+                        "126993": "2023-06-19T19:04:54.081Z",
+                        "126996": "2023-06-17T18:57:06.473Z",
+                        "126998": "2023-06-17T18:57:11.438Z",
+                        "127250": "2023-06-19T19:50:15.025Z",
+                        "127251": "2023-06-19T19:50:15.025Z",
+                        "127257": "2023-06-19T19:50:14.147Z"
+                    },
+                    "uniqueId": "1254557",
+                    "manufacturerName": "B&G",
+                    "deviceFunction": 160,
+                    "deviceClass": "Steering and Control surfaces",
+                    "deviceInstanceLower": 0,
+                    "deviceInstanceUpper": 0,
+                    "systemInstance": 0,
+                    "deviceInstance": 0,
+                    "canName": "c050a0002fb3249d",
+                    "src": "0",
+                    "productName": "ZG100        Compass",
+                    "hardwareVersion": "",
+                    "softwareVersion": "1.6.00.02",
+                    "productID": 13682,
+                    "serialNumber": "128836765",
+                    "nmea2000Version": 2100,
+                    "certificationLevel": 2,
+                    "loadEquivalency": 1,
+                    "unknownPGNs": {
+                        "126993": {
+                            "canId": 502272256,
+                            "prio": 7,
+                            "src": 0,
+                            "dst": 255,
+                            "pgn": 126993,
+                            "timestamp": "2023-06-19T19:04:54.081Z",
+                            "fields": {
+                                "Data transmit offset": 60,
+                                "Sequence Counter": 0
+                            },
+                            "description": "Heartbeat"
+                        }
+                    }
+                }
+            },
+            "1": {
+                "n2k": {
+                    "pgns": {
+                        "59904": "2023-06-17T18:57:00.233Z",
+                        "60928": "2023-06-19T19:49:18.366Z",
+                        "126993": "2023-06-19T19:04:53.959Z",
+                        "126996": "2023-06-17T18:57:06.450Z",
+                        "126998": "2023-06-17T18:57:11.442Z",
+                        "127250": "2023-06-19T19:50:14.992Z",
+                        "127251": "2023-06-19T19:50:14.992Z",
+                        "127252": "2023-06-17T18:57:00.255Z",
+                        "127257": "2023-06-19T19:50:14.943Z"
+                    },
+                    "uniqueId": "1096760",
+                    "manufacturerName": "Navico",
+                    "deviceFunction": 140,
+                    "deviceClass": "Navigation",
+                    "deviceInstanceLower": 0,
+                    "deviceInstanceUpper": 0,
+                    "systemInstance": 0,
+                    "deviceInstance": 0,
+                    "canName": "c0788c002270bc38",
+                    "src": "1",
+                    "unknownPGNs": {
+                        "59904": {
+                            "canId": 418053633,
+                            "prio": 6,
+                            "src": 1,
+                            "dst": 254,
+                            "pgn": 59904,
+                            "timestamp": "2023-06-17T18:57:00.233Z",
+                            "fields": {
+                                "PGN": 60928
+                            },
+                            "description": "ISO Request"
+                        },
+                        "126993": {
+                            "canId": 502272257,
+                            "prio": 7,
+                            "src": 1,
+                            "dst": 255,
+                            "pgn": 126993,
+                            "timestamp": "2023-06-19T19:04:53.959Z",
+                            "fields": {
+                                "Data transmit offset": 60,
+                                "Sequence Counter": 0
+                            },
+                            "description": "Heartbeat"
+                        },
+                        "127252": {
+                            "canId": 233903105,
+                            "prio": 3,
+                            "src": 1,
+                            "dst": 255,
+                            "pgn": 127252,
+                            "timestamp": "2023-06-17T18:57:00.255Z",
+                            "fields": {
+                                "SID": 0,
+                                "Heave": -1.86,
+                                "Reserved1": 2868903935
+                            },
+                            "description": "Heave"
+                        }
+                    },
+                    "productName": "Precision-9 Compass",
+                    "hardwareVersion": "",
+                    "softwareVersion": "2.0.4-3",
+                    "productID": 13233,
+                    "serialNumber": "120683576",
+                    "nmea2000Version": 1210,
+                    "certificationLevel": 1,
+                    "loadEquivalency": 1
+                }
+            },
+            "2": {
+                "n2k": {
+                    "pgns": {
+                        "59904": "2023-06-17T18:57:00.337Z",
+                        "60928": "2023-06-19T19:47:38.646Z",
+                        "126992": "2023-06-19T19:50:14.125Z",
+                        "126993": "2023-06-19T19:04:54.082Z",
+                        "126996": "2023-06-17T18:57:06.459Z",
+                        "126998": "2023-06-17T18:57:11.437Z",
+                        "127258": "2023-06-19T19:50:14.145Z",
+                        "129025": "2023-06-19T19:50:15.024Z",
+                        "129026": "2023-06-19T19:50:15.024Z",
+                        "129029": "2023-06-19T19:50:14.142Z",
+                        "129539": "2023-06-17T18:57:01.111Z",
+                        "129540": "2023-06-19T19:50:14.137Z"
+                    },
+                    "uniqueId": "1270941",
+                    "manufacturerName": "B&G",
+                    "deviceFunction": 145,
+                    "deviceClass": "Navigation",
+                    "deviceInstanceLower": 0,
+                    "deviceInstanceUpper": 0,
+                    "systemInstance": 0,
+                    "deviceInstance": 0,
+                    "canName": "c07891002fb3649d",
+                    "src": "2",
+                    "unknownPGNs": {
+                        "59904": {
+                            "canId": 418053634,
+                            "prio": 6,
+                            "src": 2,
+                            "dst": 254,
+                            "pgn": 59904,
+                            "timestamp": "2023-06-17T18:57:00.337Z",
+                            "fields": {
+                                "PGN": 60928
+                            },
+                            "description": "ISO Request"
+                        },
+                        "126993": {
+                            "canId": 502272258,
+                            "prio": 7,
+                            "src": 2,
+                            "dst": 255,
+                            "pgn": 126993,
+                            "timestamp": "2023-06-19T19:04:54.082Z",
+                            "fields": {
+                                "Data transmit offset": 60,
+                                "Sequence Counter": 0
+                            },
+                            "description": "Heartbeat"
+                        },
+                        "129539": {
+                            "canId": 435815170,
+                            "prio": 6,
+                            "src": 2,
+                            "dst": 255,
+                            "pgn": 129539,
+                            "timestamp": "2023-06-17T18:57:01.111Z",
+                            "fields": {
+                                "SID": 0,
+                                "Desired Mode": "Auto",
+                                "Actual Mode": "1D",
+                                "HDOP": 99,
+                                "VDOP": 99
+                            },
+                            "description": "GNSS DOPs"
+                        }
+                    },
+                    "productName": "ZG100        Antenna",
+                    "hardwareVersion": "T3C200721_10",
+                    "softwareVersion": "1.6.00.02",
+                    "productID": 13682,
+                    "serialNumber": "128836765",
+                    "nmea2000Version": 2100,
+                    "certificationLevel": 2,
+                    "loadEquivalency": 1
+                }
+            },
+            "3": {
+                "n2k": {
+                    "pgns": {
+                        "59392": "2023-06-17T18:57:16.432Z",
+                        "59904": "2023-06-17T18:57:00.235Z",
+                        "60928": "2023-06-19T19:49:51.460Z",
+                        "126993": "2023-06-19T19:04:53.925Z",
+                        "126996": "2023-06-17T18:57:06.481Z",
+                        "130306": "2023-06-19T19:50:14.984Z"
+                    },
+                    "uniqueId": "52971",
+                    "manufacturerName": "B&G",
+                    "deviceFunction": 130,
+                    "deviceClass": "External Environment",
+                    "deviceInstanceLower": 0,
+                    "deviceInstanceUpper": 0,
+                    "systemInstance": 0,
+                    "deviceInstance": 0,
+                    "canName": "c0aa82002fa0ceeb",
+                    "src": "3",
+                    "unknownPGNs": {
+                        "59392": {
+                            "canId": 417857539,
+                            "prio": 6,
+                            "src": 3,
+                            "dst": 0,
+                            "pgn": 59392,
+                            "timestamp": "2023-06-17T18:57:16.432Z",
+                            "fields": {
+                                "Control": "NAK",
+                                "Reserved1": "16777215",
+                                "PGN": 126998
+                            },
+                            "description": "ISO Acknowledgement"
+                        },
+                        "59904": {
+                            "canId": 418053635,
+                            "prio": 6,
+                            "src": 3,
+                            "dst": 254,
+                            "pgn": 59904,
+                            "timestamp": "2023-06-17T18:57:00.235Z",
+                            "fields": {
+                                "PGN": 60928
+                            },
+                            "description": "ISO Request"
+                        },
+                        "126993": {
+                            "canId": 502272259,
+                            "prio": 7,
+                            "src": 3,
+                            "dst": 255,
+                            "pgn": 126993,
+                            "timestamp": "2023-06-19T19:04:53.925Z",
+                            "fields": {
+                                "Data transmit offset": 60,
+                                "Sequence Counter": 252
+                            },
+                            "description": "Heartbeat"
+                        }
+                    },
+                    "productName": "WS310",
+                    "hardwareVersion": "",
+                    "softwareVersion": "01100_E 100000 051",
+                    "productID": 17537,
+                    "serialNumber": "003819#",
+                    "nmea2000Version": 2100,
+                    "certificationLevel": 1,
+                    "loadEquivalency": 1
+                }
+            },
+            "35": {
+                "n2k": {
+                    "pgns": {
+                        "60928": "2023-06-19T19:49:51.499Z",
+                        "126993": "2023-06-19T19:04:54.663Z",
+                        "126996": "2023-06-17T18:57:06.502Z",
+                        "126998": "2023-06-17T18:57:11.426Z",
+                        "128259": "2023-06-19T19:50:15.030Z",
+                        "128275": "2023-06-19T19:50:14.437Z",
+                        "130310": "2023-06-19T19:50:14.433Z",
+                        "130311": "2023-06-19T19:50:14.934Z"
+                    },
+                    "uniqueId": "682416",
+                    "manufacturerName": "Airmar",
+                    "deviceFunction": 136,
+                    "deviceClass": "Navigation",
+                    "deviceInstanceLower": 0,
+                    "deviceInstanceUpper": 0,
+                    "systemInstance": 0,
+                    "deviceInstance": 0,
+                    "canName": "c078880010ea69b0",
+                    "src": "35",
+                    "productName": "DST810",
+                    "hardwareVersion": "IDST810-NV40-1,HW3:1,OEM0",
+                    "softwareVersion": "6.200,6.505,1.01,1.05.00",
+                    "productID": 20695,
+                    "serialNumber": "A000C8RT",
+                    "nmea2000Version": 2101,
+                    "certificationLevel": 2,
+                    "loadEquivalency": 3,
+                    "installationNote2": "ED:85:FA:67:1D:62",
+                    "manufacturerInfo": "Airmar 1-603-673-9570 www.airmar.com",
+                    "unknownPGNs": {
+                        "126993": {
+                            "canId": 502272291,
+                            "prio": 7,
+                            "src": 35,
+                            "dst": 255,
+                            "pgn": 126993,
+                            "timestamp": "2023-06-19T19:04:54.663Z",
+                            "fields": {
+                                "Data transmit offset": 60,
+                                "Sequence Counter": 0
+                            },
+                            "description": "Heartbeat"
+                        }
+                    }
+                }
+            },
+            "37": {
+                "n2k": {
+                    "pgns": {
+                        "59904": "2023-06-17T18:57:00.178Z",
+                        "60928": "2023-06-19T19:49:51.564Z",
+                        "126993": "2023-06-19T19:05:21.827Z",
+                        "126996": "2023-06-17T18:57:06.508Z",
+                        "126998": "2023-06-17T18:57:11.449Z",
+                        "127258": "2023-06-19T19:50:07.862Z",
+                        "130845": "2023-06-17T18:57:00.417Z"
+                    },
+                    "uniqueId": "1475376",
+                    "manufacturerName": "B&G",
+                    "deviceFunction": 130,
+                    "deviceClass": "Display",
+                    "deviceInstanceLower": 4,
+                    "deviceInstanceUpper": 1,
+                    "systemInstance": 0,
+                    "deviceInstance": 12,
+                    "canName": "c0f0820c2fb68330",
+                    "src": "37",
+                    "unknownPGNs": {
+                        "59904": {
+                            "canId": 418053669,
+                            "prio": 6,
+                            "src": 37,
+                            "dst": 254,
+                            "pgn": 59904,
+                            "timestamp": "2023-06-17T18:57:00.178Z",
+                            "fields": {
+                                "PGN": 60928
+                            },
+                            "description": "ISO Request"
+                        },
+                        "126993": {
+                            "canId": 502272293,
+                            "prio": 7,
+                            "src": 37,
+                            "dst": 255,
+                            "pgn": 126993,
+                            "timestamp": "2023-06-19T19:05:21.827Z",
+                            "fields": {
+                                "Data transmit offset": 60,
+                                "Sequence Counter": 0
+                            },
+                            "description": "Heartbeat"
+                        },
+                        "130845": {
+                            "canId": 234822949,
+                            "prio": 3,
+                            "src": 37,
+                            "dst": 255,
+                            "pgn": 130845,
+                            "timestamp": "2023-06-17T18:57:00.417Z",
+                            "input": [],
+                            "fields": {
+                                "Manufacturer Code": "Simrad",
+                                "Industry Code": "Marine Industry",
+                                "Message ID": 35,
+                                "Repeat indicator": "Initial",
+                                "Unused": 16777215
+                            }
+                        }
+                    },
+                    "productName": "H5000    Graphic Display",
+                    "hardwareVersion": "",
+                    "softwareVersion": "01000_E 2.2.57.3.163",
+                    "productID": 29816,
+                    "serialNumber": "107440816",
+                    "nmea2000Version": 2100,
+                    "certificationLevel": 2,
+                    "loadEquivalency": 4
+                }
+            },
+            "label": "can0",
+            "type": "NMEA2000"
+        }
+    }
+}
