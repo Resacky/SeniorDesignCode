@@ -1,21 +1,17 @@
-import asyncio
-import aioschedule as schedule
-import datetime
 import json
-import aiohttp
 import serial
+import asyncio
 
-async def fetch_data_from_api(url):
-    async with aiohttp.ClientSession() as session:
-        async with session.get(url) as resp:
-            return await resp.text()
+# Open the serial connection outside of the job function.
+# This will ensure that the serial connection is opened only once.
+try:
+    ser = serial.Serial('/dev/serial0', 9600)  # Open serial port at 9600 bps
+except Exception as e:
+    print(f"Error opening serial port: {e}")
 
 async def job():
     try:
-        # Set up the serial connection. The port might vary so you'd have to check that.
-        ser = serial.Serial('/dev/serial0', 9600)  # Open serial port at 9600 bps
-
-        # This will be the API URL...
+        # This will be the API URL in the future...
         # api_url = "YOUR_API_ENDPOINT_HERE"
         # response = await fetch_data_from_api(api_url)
         # json_data = json.loads(response)
@@ -31,18 +27,20 @@ async def job():
                 speed_timestamp = vessel_data["navigation"]["speedThroughWater"]["timestamp"]
                 string = f"Boat with UUID {vessel_uuid}'s speed: {speed} at {speed_timestamp}"
                 print(string)
-                # To send the data to the serial port
+                
+                # Send the data to the serial port
                 ser.write(string.encode())  # Convert the string to bytes
-                ser.close()  # Close the serial connection
+                
     except Exception as e:
-        print(f"Error reading the file or extracting speed: {e}")
- 
-async def main():
-    schedule.every(10).seconds.do(job)  # Schedule job every 10 seconds
+        print(f"Error processing data or sending to serial port: {e}")
 
+async def main():
     while True:
-        await schedule.run_pending()
-        await asyncio.sleep(1)  # Sleep 1 second between checks
+        await job()  # Run the job
+        await asyncio.sleep(10)  # Sleep for 10 seconds before running the job again
 
 if __name__ == '__main__':
-    asyncio.run(main())
+    try:
+        asyncio.run(main())
+    finally:
+        ser.close()  # Ensure the serial connection is closed when the program exits
