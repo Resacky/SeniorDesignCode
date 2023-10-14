@@ -3,6 +3,7 @@ import aioschedule as schedule
 import datetime
 import json
 import aiohttp
+import serial
 
 async def fetch_data_from_api(url):
     async with aiohttp.ClientSession() as session:
@@ -11,20 +12,28 @@ async def fetch_data_from_api(url):
 
 async def job():
     try:
+        # Set up the serial connection. The port might vary so you'd have to check that.
+        ser = serial.Serial('/dev/serial0', 9600)  # Open serial port at 9600 bps
+
         # This will be the API URL...
-        api_url = "YOUR_API_ENDPOINT_HERE"
-        response = await fetch_data_from_api(api_url)
-        json_data = json.loads(response)
+        # api_url = "YOUR_API_ENDPOINT_HERE"
+        # response = await fetch_data_from_api(api_url)
+        # json_data = json.loads(response)
         
         # For testing & debugging purposes...
-        # with open("./test_input/SignalK_testInput.json", "r") as file:
-            # json_data = json.load(file)
+        with open("./test_input/SignalK_testInput.json", "r") as file:
+            json_data = json.load(file)
         
-        # Extract boat's speed
-        speed_path = json_data["vessels"]["urn:mrn:signalk:uuid:521ae5ac-f557-4c7f-a225-e0e3de666ecb"]["navigation"]["speedThroughWater"]["value"]
-        speed_path_timestamp = json_data["vessels"]["urn:mrn:signalk:uuid:521ae5ac-f557-4c7f-a225-e0e3de666ecb"]["navigation"]["speedThroughWater"]["timestamp"]
-
-        print(f"Boat's speed: {speed_path} at {speed_path_timestamp}")
+        # Dynamically iterate over vessels
+        for vessel_uuid, vessel_data in json_data["vessels"].items():
+            if "navigation" in vessel_data and "speedThroughWater" in vessel_data["navigation"]:
+                speed = vessel_data["navigation"]["speedThroughWater"]["value"]
+                speed_timestamp = vessel_data["navigation"]["speedThroughWater"]["timestamp"]
+                string = f"Boat with UUID {vessel_uuid}'s speed: {speed} at {speed_timestamp}"
+                print(string)
+                # To send the data to the serial port
+                ser.write(string.encode())  # Convert the string to bytes
+                ser.close()  # Close the serial connection
     except Exception as e:
         print(f"Error reading the file or extracting speed: {e}")
  
