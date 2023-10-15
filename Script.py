@@ -4,6 +4,7 @@ import serial
 import asyncio
 
 # API endpoint URL.
+# URL endpoint: http://localhost:3000/signalk/v1/api/
 api_url = "YOUR_API_ENDPOINT_HERE"
 
 # Open the serial connection outside of the job function.
