@@ -39,7 +39,9 @@ async def job():
                 # Grab the speedThroughWater timestamp and save it onto a variable
                 speed_timestamp = vessel_data["navigation"]["speedThroughWater"]["timestamp"]
                 # Create a string w/ the relevant data to then print onto the console, and send it to the serial port.
-                string = f"Boat with UUID {vessel_uuid}'s speed: {speed} at {speed_timestamp}"
+                print(f"Boat with UUID {vessel_uuid}'s speed: {speed} at {speed_timestamp}")
+                # This is the actual string to be sent to the serial port
+                string = f"boat speed {speed} knots"
                 print(string)
                 
                 # Send the data to the serial port, converting the string into bytes.
