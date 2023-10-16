@@ -41,7 +41,7 @@ async def job():
                 # Create a string w/ the relevant data to then print onto the console, and send it to the serial port.
                 print(f"Boat with UUID {vessel_uuid}'s speed: {speed} at {speed_timestamp}")
                 # This is the actual string to be sent to the serial port
-                string = f"boat speed {speed} knots"
+                string = f"boat speed {speed} knots\n"
                 print(string)
                 
                 # Send the data to the serial port, converting the string into bytes.
