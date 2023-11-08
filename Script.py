@@ -44,7 +44,7 @@ async def job():
 
                 # Grab the headingMagnetic value and save it onto a variable
                 heading_magnetic = vessel_data["navigation"]["headingMagnetic"]["values"]["can0.1"]["value"]
-                heading_magnetic_degrees = heading_magnetic * (180 / math.pi)
+                heading_magnetic_degrees = round(heading_magnetic * (180 / math.pi))
 
                 # Grab the windAngle & windSpeed value and save it onto a variable
                 wind_angle = vessel_data["environment"]["wind"]["angleApparent"]["value"]
