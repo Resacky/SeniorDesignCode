@@ -37,7 +37,7 @@ async def job():
             if "navigation" in vessel_data and "speedThroughWater" in vessel_data["navigation"]:
 
                 # Grab the speedThoughWater value and save it onto a variable
-                speed = vessel_data["navigation"]["speedThroughWater"]["value"]
+                speed = round(vessel_data["navigation"]["speedThroughWater"]["value"], 1)
 
                 # Grab the speedThroughWater timestamp and save it onto a variable
                 speed_timestamp = vessel_data["navigation"]["speedThroughWater"]["timestamp"]
@@ -48,13 +48,15 @@ async def job():
 
                 # Grab the windAngle & windSpeed value and save it onto a variable
                 wind_angle = vessel_data["environment"]["wind"]["angleApparent"]["value"]
+                wind_angle_degrees = round(wind_angle * (180 / math.pi))
                 wind_speed = vessel_data["environment"]["wind"]["speedApparent"]["value"]
+                wind_speed_knots = round(wind_speed * 1.94384, 1)
 
                 # Create a string w/ the relevant data to then print onto the console, and send it to the serial port
                 print(f"Boat with UUID: {vessel_uuid}'s data at {speed_timestamp}")
 
                 # This is the actual string to be sent to the serial port
-                string = f"Heading {heading_magnetic_degrees} degrees, boat speed {speed} knots, wind angle {wind_angle} degrees, wind speed {wind_speed} knots\r"
+                string = f"Heading {heading_magnetic_degrees} degrees, boat speed {speed} knots, wind angle {wind_angle_degrees} degrees, wind speed {wind_speed_knots} knots\r"
                 print(string)
                 
                 # Send the data to the serial port, converting the string into bytes.
