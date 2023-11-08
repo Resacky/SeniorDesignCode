@@ -2,6 +2,7 @@ import json
 import aiohttp
 import serial
 import asyncio
+import math # for converting radians to degrees
 
 # API endpoint URL.
 # URL endpoint: http://localhost:3000/signalk/v1/api/
@@ -34,14 +35,26 @@ async def job():
         # Dynamically iterate over vessels, should be only one vessel in this case.
         for vessel_uuid, vessel_data in json_data["vessels"].items():
             if "navigation" in vessel_data and "speedThroughWater" in vessel_data["navigation"]:
+
                 # Grab the speedThoughWater value and save it onto a variable
                 speed = vessel_data["navigation"]["speedThroughWater"]["value"]
+
                 # Grab the speedThroughWater timestamp and save it onto a variable
                 speed_timestamp = vessel_data["navigation"]["speedThroughWater"]["timestamp"]
-                # Create a string w/ the relevant data to then print onto the console, and send it to the serial port.
-                print(f"Boat with UUID {vessel_uuid}'s speed: {speed} at {speed_timestamp}")
+
+                # Grab the headingMagnetic value and save it onto a variable
+                heading_magnetic = vessel_data["navigation"]["headingMagnetic"]["values"]["can0.1"]["value"]
+                heading_magnetic_degrees = heading_magnetic * (180 / math.pi)
+
+                # Grab the windAngle & windSpeed value and save it onto a variable
+                wind_angle = vessel_data["environment"]["wind"]["angleApparent"]["value"]
+                wind_speed = vessel_data["environment"]["wind"]["speedApparent"]["value"]
+
+                # Create a string w/ the relevant data to then print onto the console, and send it to the serial port
+                print(f"Boat with UUID: {vessel_uuid}'s data at {speed_timestamp}")
+
                 # This is the actual string to be sent to the serial port
-                string = f"boat speed {speed} knots\n"
+                string = f"Heading {heading_magnetic_degrees} degrees, boat speed {speed} knots, wind angle {wind_angle} degrees, wind speed {wind_speed} knots\r"
                 print(string)
                 
                 # Send the data to the serial port, converting the string into bytes.
