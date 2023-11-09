@@ -1,0 +1,4 @@
+# This text file is going to be used to install all the libraries needed automatically.
+aiohttp
+serial
+asyncio
