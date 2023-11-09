@@ -2,11 +2,12 @@ import json
 import aiohttp
 import serial
 import asyncio
-import math # for converting radians to degrees
+# for converting radians to degrees
+import math 
 
 # API endpoint URL.
 # URL endpoint: http://localhost:3000/signalk/v1/api/
-api_url = "YOUR_API_ENDPOINT_HERE"
+api_url = "http://localhost:3000/signalk/v1/api/"
 
 # Open the serial connection outside of the job function.
 # This will ensure that the serial connection is opened only once.
