@@ -69,7 +69,7 @@ async def main():
     # Indefinitely run whatever is within the main function.
     while True:
         await job()  # Run the job
-        await asyncio.sleep(10)  # Sleep for 10 seconds before running the job again
+        await asyncio.sleep(12)  # Sleep for 10 seconds before running the job again
 
 if __name__ == '__main__':
     try:
